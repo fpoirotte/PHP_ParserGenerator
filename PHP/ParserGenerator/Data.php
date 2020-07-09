@@ -1725,7 +1725,8 @@ class PHP_ParserGenerator_Data
         $used = array();   /* True for each RHS element which is used */
         
         $this->append_str('', 0);
-        for ($i = 0; $i < strlen($rp->code); $i++) {
+        $codelen = strlen($rp->code);
+        for ($i = 0; $i < $codelen; $i++) {
             $cp = $rp->code[$i];
             if (preg_match('/[A-Za-z]/', $cp) &&
                  ($i === 0 || (!preg_match('/[A-Za-z0-9_]/', $rp->code[$i - 1])))) {
